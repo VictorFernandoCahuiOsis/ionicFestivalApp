@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center; color: white;">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img style="text-align: center;" src="../../../../assets/festivalLogo2.png">
+    </ion-card-header>
+    <ion-card-content>
+    Hola <b>{{nombre_apellido}}</b>, bienvenido a la comunidad de <b>"Hay Festival"</b>, empieza ya y crea tu propio festival
+    o unete a uno, hay muchos festivales cerca a ti!
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <!--<img src="../../../../assets/codigo_qr.png" />
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title style="text-align: center;">Codigo QR</ion-card-title>
+    </ion-card-header>-->
+    <ion-card-content>
+      <br>
+      <ion-card-title style="text-align: center;">¿Que quieres hacer?</ion-card-title>
+      <br>
+      <div style="text-align: center;">
+        <ion-button expand="block" (click)="verCodigo()" class="botonColor">
+          <ion-icon name="qr-scanner" style="margin-right: 3px;"></ion-icon>
+          Ver mi Código QR
+        </ion-button>
+        <ion-button expand="block" (click)="crearEvento()" class="botonColor">
+          <ion-icon name="pin" style="margin-right: 3px;"></ion-icon>
+          Crear Festival
+        </ion-button>
+        <ion-button expand="block" (click)="verEventosAll()" class="botonColor">
+          <ion-icon name="md-list-box" style="margin-right: 3px;"></ion-icon>
+          Ver Festivales
+        </ion-button>
+        <ion-button expand="block" (click)="verMisEventos()" class="botonColor">
+          <ion-icon name="md-albums" style="margin-right: 3px;"></ion-icon>
+          Mis Festivales
+        </ion-button>
+        <ion-button expand="block" (click)="irFestival()" class="botonColor">
+          <ion-icon name="qr-scanner" style="margin-right: 3px;"></ion-icon>
+          Escanear Festival
+        </ion-button>
+      </div>
+
+      <br>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="tab2" (click)="logOut()">
+    <ion-icon name="ios-log-out" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Cerrar Sesión</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

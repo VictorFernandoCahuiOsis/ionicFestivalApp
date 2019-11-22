@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">Registro de Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Nombre completo: </ion-label>
+        <ion-input type="text" #username [(ngModel)]="usuario.nombre_apellido"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo electrónico: </ion-label>
+        <ion-input type="text" #correo [(ngModel)]="usuario.correo_electronico"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password: </ion-label>
+        <ion-input type="password" #password [(ngModel)]="usuario.password"></ion-input>
+      </ion-item>
+      <br>
+
+      <div style="text-align: center;">
+        <ion-button (click)="registrar()"
+          [disabled]="usuario.nombre_apellido == '' || usuario.correo_electronico == '' || usuario.password == '' "
+          class="botonColor">Registrarse</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button (click)="goBack()">
+    <ion-icon name="ios-arrow-round-back" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Home</ion-label>
+  </ion-tab-button>
+  <ion-tab-button (click)="irLogin()">
+    <ion-icon name="person" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Login</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">Detalles Festival</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="festival.url_imagen" />
+    <ion-card-header>
+      <ion-card-subtitle>{{festival.fechainicioFormal}} - {{festival.fechafinFormal}}</ion-card-subtitle>
+      <ion-card-title>{{festival.nombre_evento}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{festival.descripcion}}
+      <br>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-title style="text-align: center;">Publico</ion-title>
+      <ion-row>
+        <ion-col>
+          <span>Capacidad Total</span> <br>
+          <h1>{{festival.capacidad_total}}</h1>
+        </ion-col>
+        <ion-col>
+          <span>Asistentes</span> <br>
+          <h1>{{festival.asistentes}}</h1>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <!--
+  <ion-card>
+    <ion-card-content>
+      <ion-title style="text-align: center;"></ion-title>
+      <br>
+      <div style="text-align: center;">
+        <ion-button (click)="asistencia()" expand="full" fill="outline" size="large" shape="round" >Asistencia</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  -->
+  <ion-card>
+    <ion-card-content>
+
+      <div style="text-align: center;">
+        <ion-button (click)="verUbicacion()" class="botonColor">Ubicación</ion-button>
+      </div>
+
+      
+      <!--
+      <div *ngIf="scannedData">
+        <p>
+          Código escaneado : <b>{{ scannedData["text"] }}</b>
+        </p>
+        <p>
+          Formato : <b>{{ scannedData["format"] }}</b>
+        </p>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Ingrese valor QR: </ion-label>
+        <ion-input type="text" [(ngModel)]="encodeData"></ion-input>
+      </ion-item>
+      <div style="text-align: center;">
+        <ion-button (click)="encodedText()" class="botonColor">Crear QR</ion-button>
+      </div>
+      -->
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="tab1" (click)="goBack()">
+    <ion-icon name="ios-arrow-round-back" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Home</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
+
+<!--<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="schedule">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Schedule</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Speakers</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Map</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>-->

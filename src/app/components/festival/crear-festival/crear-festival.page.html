@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">Crear Festival</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+    <img src="../../../../assets/crear_festival.jpg" />
+
+    <ion-card-content>
+
+      <br>
+
+      <ion-text color="soft-grey">
+        <h5>Estas a solo un paso de crear tu propio evento!
+          Ingresa los datos de tu festival y <b>crea tu evento ya!</b></h5>
+      </ion-text>
+      <ion-item-divider></ion-item-divider>
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input [(ngModel)]="evento.nombre_evento" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="evento.descripcion"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Inicio evento</ion-label>
+        <ion-datetime [(ngModel)]="fechaInicio" displayFormat="D MMM YYYY H:mm" min="2010" max="2060"
+          placeholder="Seleccione fecha"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fin evento</ion-label>
+        <ion-datetime [(ngModel)]="fechaFin" displayFormat="D MMM YYYY H:mm" min="2010" max="2060"
+          placeholder="Seleccione fecha"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Capacidad</ion-label>
+        <ion-input type="number" #capacidad [(ngModel)]="evento.capacidad_total"></ion-input>
+      </ion-item>
+      <!--<ion-item>
+        <ion-label position="fixed" for="myFileInput">Subir imagen</ion-label>
+        <ion-input [(ngModel)]="evento.url_imagen" type="file" id="myFileInput"></ion-input>
+      </ion-item>-->
+      <br>
+      <!--<ion-grid fixed>
+        <ion-row>
+          <ion-col text-center>
+            <ion-button (click)="checkGPSPermission()">
+              Request GPS Accuracy
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Longitude</ion-col>
+          <ion-col> {{locationCoords.longitude}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Latitude</ion-col>
+          <ion-col>{{locationCoords.latitude}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Accuracy</ion-col>
+          <ion-col>{{locationCoords.accuracy}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Timestamp</ion-col>
+          <ion-col>{{locationCoords.timestamp | date:'medium'}}</ion-col>
+        </ion-row>
+      </ion-grid>-->
+      <div style="text-align: center;">
+        <ion-button (click)="selectImage()" class="botonColor" expand="block">
+          Subir imagen
+          <ion-icon slot="end" name="camera"></ion-icon>
+        </ion-button>
+        <h5 *ngIf="croppedImagepath.length">Imagen del evento</h5>
+        <p *ngIf="isLoading">Cargando ...</p>
+        <img [src]="croppedImagepath" />
+      </div>
+
+      <ion-item-divider></ion-item-divider>
+      <br>
+      <div style="text-align: center;">
+        <ion-button (click)="crearEvento()" 
+        [disabled]="evento.nombre_evento == '' || evento.descripcion == '' || fechaInicio == '' || fechaFin == '' || evento.capacidad_total == '' || evento.url_imagen == '' "
+        class="botonColor">Crear Evento</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button (click)="goBack()">
+    <ion-icon name="ios-arrow-round-back" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Home</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
+

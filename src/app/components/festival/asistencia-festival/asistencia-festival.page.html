@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">Lista de Asistentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="11">
+            <div>
+              <b>Datos del asistente</b>
+            </div>
+          </ion-col>
+          <ion-col size="1">
+            <div>
+              <h1><b>
+                  <ion-icon ios="ios-pin" md="md-pin"></ion-icon>
+                </b></h1>
+            </div>
+          </ion-col>
+        </ion-row>
+        <br>
+        
+        <ion-row *ngFor="let a of listAsi">
+          <ion-col size="11">
+            <div>
+              {{a.nombre_usuario}}
+            </div>
+          </ion-col>
+          <ion-col size="1">
+            <div>
+              <ion-text color="success">
+                <h1>
+                  <ion-icon ios="ios-happy" md="md-happy"></ion-icon>
+                </h1>
+              </ion-text>
+            </div>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+
+      <br>
+      <!--
+      <div style="text-align: center;">
+        <ion-button (click)="irCodigoQr()" class="botonColor">Scanear Codigo</ion-button>
+      </div>
+      -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="tab1" (click)="goBack()">
+    <ion-icon name="ios-arrow-round-back" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Home</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

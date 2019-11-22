@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">{{festival.nombre_evento}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{festival.fechainicioFormal}} - {{festival.fechafinFormal}}</ion-card-subtitle>
+      <!-- <ion-card-title style="text-align: center;">{{festival.nombre_evento}}</ion-card-title> -->
+      <span style="font-weight: bold;">A: </span> Mi ubicación actual<br>
+      <span style="font-weight: bold;">B: </span> Ubicación del evento {{festival.nombre_evento}}
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-title style="text-align: center;">Publico</ion-title>
+      <ion-row>
+        <ion-col>
+          <span>Capacidad Total</span> <br>
+          <h1>{{festival.capacidad_total}}</h1>
+        </ion-col>
+        <ion-col>
+          <span>Asistentes</span> <br>
+          <h1>{{festival.asistentes}}</h1>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <div id="map"></div>
+</ion-content>

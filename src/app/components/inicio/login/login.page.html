@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input [(ngModel)]="usuario.correo_electronico"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="usuario.password" type="password"></ion-input>
+      </ion-item>
+
+    </ion-card-content>
+    <ion-card-content>
+      <div style="text-align: center;">
+        <ion-button (click)="login()" [disabled]="usuario.correo_electronico == '' || usuario.password == ''"
+          class="botonColor">Ingresar</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="tab1" (click)="goBack()">
+    <ion-icon name="ios-arrow-round-back" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Home</ion-label>
+  </ion-tab-button>
+  <ion-tab-button tab="tab2" (click)="irRegistro()">
+    <ion-icon name="person-add" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Unirse</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

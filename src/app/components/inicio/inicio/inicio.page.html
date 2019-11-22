@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center; color: white;">Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img style="text-align: center;" src="../../../../assets/festivalLogo2.png">
+    </ion-card-header>
+
+    <ion-card-content>
+      Crea un festival, indica la ubicación.
+      <br>
+      Controlar el numero de personas que esta dentro del festival
+      <br>
+      <br>
+      <div style="text-align: center;">
+        <ion-button (click)="irFestivales()" class="botonColor">Ver Festivales</ion-button>
+      </div>
+
+      <!--
+      <div style="text-align: center;">
+        <ion-button (click)="irCrearFest()" class="botonColor">Crear Festival</ion-button>
+      </div>
+      -->
+    </ion-card-content>
+  </ion-card>
+
+  <!--
+  <ion-card>
+    <ion-card-content>
+      <ion-title style="text-align: center;">Comunidad</ion-title>
+      <br>
+      <div style="text-align: center;">
+        <ion-button (click)="irLogin()" class="botonColorLogin">Login</ion-button>
+        <ion-button (click)="irRegistro()" class="botonColorUnirse">Unirse</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  -->
+
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button (click)="irLogin()">
+    <ion-icon name="person" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Login</ion-label>
+  </ion-tab-button>
+  <ion-tab-button (click)="irRegistro()">
+    <ion-icon name="person-add" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Unirse</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

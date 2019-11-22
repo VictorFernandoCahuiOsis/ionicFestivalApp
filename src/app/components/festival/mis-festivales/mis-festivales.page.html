@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;color: white;">Mis Festivales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let festi of listAllEventos">
+
+    <img [src]="festi.url_imagen" />
+    <ion-card-header>
+      <ion-card-subtitle>{{festi.fechainicioFormal}} - {{festi.fechafinFormal}}</ion-card-subtitle>
+      <ion-card-title>{{festi.nombre_evento}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{festi.descripcion}}
+      <br>
+
+      <span style="font-weight: bold;">Asistentes: {{festi.asistentes}}</span>
+      <!--
+      <p><span style="font-weight: bold;">latitud: {{festi.latitud_evento}}</span></p>
+      <p><span style="font-weight: bold;">longitud: {{festi.longitud_evento}}</span></p>
+      -->
+
+      <div style="text-align: center;">
+        <ion-button (click)="verDescripcion(festi)" class="botonColor">Detalles</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="tab1" (click)="goBack()">
+    <ion-icon name="ios-arrow-round-back" style="color: white;"></ion-icon>
+    <ion-label style="color: white;">Home</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
